@@ -21,6 +21,19 @@ UIImage *gu_img;
 UIImage *ch_img;
 UIImage *pa_img;
 
+- (void)get_kekka {
+    srand(time(nil));
+    
+    kekka = rand()%3;
+    if (kekka == 0) {
+        self.aite_img.image = gu_img;
+    } else if (kekka == 1) {
+        self.aite_img.image = ch_img;
+    } else {
+        self.aite_img.image = pa_img;
+    }
+}
+
 - (IBAction)btn_gu_down:(id)sender {
     self.lbl_mes.text = @"じゃんけん・・・ぽん";
     self.btn_pa.hidden = YES;
@@ -28,18 +41,9 @@ UIImage *pa_img;
     self.lbl_aite.hidden = NO;
     self.aite_img.hidden = NO;
     self.btn_again.hidden = NO;
-    
-    srand(time(nil));
-    NSInteger kekka;
-    kekka = rand()%3;
-    if (kekka == 0) {
-       self.aite_img.image = gu_img;
-    } else if (kekka == 1) {
-       self.aite_img.image = ch_img;
-    } else {
-       self.aite_img.image = pa_img;
-    }
-    
+ 
+    [self get_kekka];
+
     if (kekka == 0) {
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
@@ -62,16 +66,7 @@ UIImage *pa_img;
     self.aite_img.hidden = NO;
     self.btn_again.hidden = NO;
     
-    srand(time(nil));
-    NSInteger kekka;
-    kekka = rand()%3;
-    if (kekka == 0) {
-        self.aite_img.image = gu_img;
-    } else if (kekka == 1) {
-        self.aite_img.image = ch_img;
-    } else {
-        self.aite_img.image = pa_img;
-    }
+    [self get_kekka];
     
     if (kekka == 1) {
         self.lbl_kekka.text = @"あいこで・・・";
@@ -94,17 +89,8 @@ UIImage *pa_img;
     self.lbl_aite.hidden = NO;
     self.aite_img.hidden = NO;
     self.btn_again.hidden = NO;
-       
-    srand(time(nil));
-    NSInteger kekka;
-    kekka = rand()%3;
-    if (kekka == 0) {
-        self.aite_img.image = gu_img;
-    } else if (kekka == 1) {
-        self.aite_img.image = ch_img;
-    } else {
-        self.aite_img.image = pa_img;
-    }
+    
+    [self get_kekka];
     
     if (kekka == 2) {
         self.lbl_kekka.text = @"あいこで・・・";
@@ -129,7 +115,7 @@ UIImage *pa_img;
     self.btn_pa.enabled = YES;
     self.btn_again.hidden = YES;
     self.lbl_aite.hidden = YES;
-        self.aite_img.hidden = YES;
+    self.aite_img.hidden = YES;
     self.lbl_mes.text = @"じゃんけん・・・";
     self.lbl_kekka.text = @"";
 }

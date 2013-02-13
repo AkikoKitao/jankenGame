@@ -17,6 +17,7 @@
     IBOutlet UILabel  *lbl_kekka;
     IBOutlet UILabel  *lbl_aite;
     IBOutlet UIImageView *aite_img;
+    NSInteger kekka;
 }
 
 @property(nonatomic,retain) UIButton *btn_gu;
@@ -32,5 +33,7 @@
 - (IBAction)btn_tyoki_down:(id)sender;
 - (IBAction)btn_pa_down:(id)sender;
 - (IBAction)btn_again_down:(id)sender;
+- (void)get_kekka;
 
 @end
+
