@@ -97,7 +97,7 @@ UIImage *pa_img;
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (kekka == 1) {
+    } else if (kekka == 0) {
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_pa.enabled = NO;
     } else {
