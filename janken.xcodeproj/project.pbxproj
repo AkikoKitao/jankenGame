@@ -23,6 +23,9 @@
 		84C4102916C5DC060056AF77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C4100416C5DC050056AF77 /* Foundation.framework */; };
 		84C4103116C5DC060056AF77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84C4102F16C5DC060056AF77 /* InfoPlist.strings */; };
 		84C4103416C5DC060056AF77 /* jankenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4103316C5DC060056AF77 /* jankenTests.m */; };
+		84C4103E16C71B830056AF77 /* ch.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4103D16C71B830056AF77 /* ch.png */; };
+		84C4104016C71C500056AF77 /* gu.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4103F16C71C500056AF77 /* gu.png */; };
+		84C4104216C71C6E0056AF77 /* pa.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4104116C71C6E0056AF77 /* pa.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		84C4103016C5DC060056AF77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84C4103216C5DC060056AF77 /* jankenTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jankenTests.h; sourceTree = "<group>"; };
 		84C4103316C5DC060056AF77 /* jankenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jankenTests.m; sourceTree = "<group>"; };
+		84C4103D16C71B830056AF77 /* ch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ch.png; sourceTree = "<group>"; };
+		84C4103F16C71C500056AF77 /* gu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gu.png; sourceTree = "<group>"; };
+		84C4104116C71C6E0056AF77 /* pa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pa.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,9 @@
 		84C4100816C5DC050056AF77 /* janken */ = {
 			isa = PBXGroup;
 			children = (
+				84C4104116C71C6E0056AF77 /* pa.png */,
+				84C4103F16C71C500056AF77 /* gu.png */,
+				84C4103D16C71B830056AF77 /* ch.png */,
 				84C4101116C5DC050056AF77 /* AppDelegate.h */,
 				84C4101216C5DC050056AF77 /* AppDelegate.m */,
 				84C4101A16C5DC060056AF77 /* ViewController.h */,
@@ -236,6 +245,9 @@
 				84C4101716C5DC050056AF77 /* Default@2x.png in Resources */,
 				84C4101916C5DC060056AF77 /* Default-568h@2x.png in Resources */,
 				84C4101F16C5DC060056AF77 /* ViewController.xib in Resources */,
+				84C4103E16C71B830056AF77 /* ch.png in Resources */,
+				84C4104016C71C500056AF77 /* gu.png in Resources */,
+				84C4104216C71C6E0056AF77 /* pa.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
