@@ -36,5 +36,11 @@
 - (void)decide_aite_kekka;
 - (void)display_aite_img;
 
+enum {
+    gu,
+    choki,
+    pa
+};
+
 @end
 

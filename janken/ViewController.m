@@ -21,17 +21,17 @@ UIImage *gu_img;
 UIImage *ch_img;
 UIImage *pa_img;
 
+
+
 - (void)decide_aite_kekka {
     srand(time(nil));
-    
     aite_kekka = rand()%3;
-    
 }
 
 - (void)display_aite_img {
-    if (aite_kekka == 0) {
+    if (aite_kekka == gu) {
         self.aite_img.image = gu_img;
-    } else if (aite_kekka == 1) {
+    } else if (aite_kekka == choki) {
         self.aite_img.image = ch_img;
     } else {
         self.aite_img.image = pa_img;
@@ -49,13 +49,13 @@ UIImage *pa_img;
     [self decide_aite_kekka];
     [self display_aite_img];
 
-    if (aite_kekka == 0) {
+    if (aite_kekka == gu) {
         self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (aite_kekka == 1) {
+    } else if (aite_kekka == choki) {
         self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_gu.enabled = NO;
@@ -77,13 +77,13 @@ UIImage *pa_img;
     [self decide_aite_kekka];
     [self display_aite_img];
     
-    if (aite_kekka == 1) {
+    if (aite_kekka == choki) {
         self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
         self.btn_gu.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (aite_kekka == 2) {
+    } else if (aite_kekka == pa) {
         self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_tyoki.enabled = NO;
@@ -105,13 +105,13 @@ UIImage *pa_img;
     [self decide_aite_kekka];
     [self display_aite_img];
     
-    if (aite_kekka == 2) {
+    if (aite_kekka == pa) {
         self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (aite_kekka == 0) {
+    } else if (aite_kekka == gu) {
         self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_pa.enabled = NO;
