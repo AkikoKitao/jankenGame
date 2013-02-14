@@ -50,14 +50,17 @@ UIImage *pa_img;
     [self display_aite_img];
 
     if (aite_kekka == 0) {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
     } else if (aite_kekka == 1) {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_gu.enabled = NO;
     } else {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのまけ";
         self.btn_gu.enabled = NO;
     }
@@ -75,14 +78,17 @@ UIImage *pa_img;
     [self display_aite_img];
     
     if (aite_kekka == 1) {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
         self.btn_gu.hidden = NO;
         self.btn_again.hidden = YES;
     } else if (aite_kekka == 2) {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_tyoki.enabled = NO;
     } else {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのまけ";
         self.btn_tyoki.enabled = NO;
     }
@@ -100,14 +106,17 @@ UIImage *pa_img;
     [self display_aite_img];
     
     if (aite_kekka == 2) {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
     } else if (aite_kekka == 0) {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_pa.enabled = NO;
     } else {
+        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
         self.lbl_kekka.text = @"あなたのまけ";
         self.btn_pa.enabled = NO;
     }
@@ -132,8 +141,11 @@ UIImage *pa_img;
     [super viewDidLoad];
     self.btn_again.hidden = YES;
     self.lbl_aite.hidden = YES;
+    
     self.lbl_kekka.text = @"";
- 
+    self.lbl_kekka.font = [UIFont boldSystemFontOfSize:30];
+    self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+    
     gu_img = [UIImage imageNamed:@"gu.png"];
     ch_img = [UIImage imageNamed:@"ch.png"];
     pa_img = [UIImage imageNamed:@"pa.png"];
