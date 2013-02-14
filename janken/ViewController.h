@@ -35,6 +35,9 @@
 - (IBAction)btn_again_down:(id)sender;
 - (void)decide_aite_kekka;
 - (void)display_aite_img;
+- (void)display_aiko;
+- (void)display_kachi;
+- (void)display_make;
 
 enum {
     gu,

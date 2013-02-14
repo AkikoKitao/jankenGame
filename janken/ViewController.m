@@ -38,6 +38,21 @@ UIImage *pa_img;
     }
 }
 
+- (void)display_aiko {
+    self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+    self.lbl_kekka.text = @"あいこで・・・";
+}
+
+- (void)display_kachi {
+    self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+    self.lbl_kekka.text = @"あなたのかち";
+}
+
+- (void)display_make {
+    self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
+    self.lbl_kekka.text = @"あなたのまけ";
+}
+
 - (IBAction)btn_gu_down:(id)sender {
     self.lbl_mes.text = @"じゃんけん・・・ぽん";
     self.btn_pa.hidden = YES;
@@ -50,18 +65,15 @@ UIImage *pa_img;
     [self display_aite_img];
 
     if (aite_kekka == gu) {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-        self.lbl_kekka.text = @"あいこで・・・";
+        [self display_aiko];
         self.btn_pa.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
     } else if (aite_kekka == choki) {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-        self.lbl_kekka.text = @"あなたのかち";
+        [self display_kachi];
         self.btn_gu.enabled = NO;
     } else {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
-        self.lbl_kekka.text = @"あなたのまけ";
+        [self display_make];
         self.btn_gu.enabled = NO;
     }
 }
@@ -78,18 +90,15 @@ UIImage *pa_img;
     [self display_aite_img];
     
     if (aite_kekka == choki) {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-        self.lbl_kekka.text = @"あいこで・・・";
+        [self display_aiko];
         self.btn_pa.hidden = NO;
         self.btn_gu.hidden = NO;
         self.btn_again.hidden = YES;
     } else if (aite_kekka == pa) {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-        self.lbl_kekka.text = @"あなたのかち";
+         [self display_kachi];
         self.btn_tyoki.enabled = NO;
     } else {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
-        self.lbl_kekka.text = @"あなたのまけ";
+         [self display_make];
         self.btn_tyoki.enabled = NO;
     }
 }
@@ -106,18 +115,15 @@ UIImage *pa_img;
     [self display_aite_img];
     
     if (aite_kekka == pa) {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-        self.lbl_kekka.text = @"あいこで・・・";
+        [self display_aiko];
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
     } else if (aite_kekka == gu) {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-        self.lbl_kekka.text = @"あなたのかち";
+        [self display_kachi];
         self.btn_pa.enabled = NO;
     } else {
-        self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
-        self.lbl_kekka.text = @"あなたのまけ";
+        [self display_make];
         self.btn_pa.enabled = NO;
     }
 }
