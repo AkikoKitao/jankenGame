@@ -21,13 +21,17 @@ UIImage *gu_img;
 UIImage *ch_img;
 UIImage *pa_img;
 
-- (void)get_kekka {
+- (void)decide_aite_kekka {
     srand(time(nil));
     
-    kekka = rand()%3;
-    if (kekka == 0) {
+    aite_kekka = rand()%3;
+    
+}
+
+- (void)display_aite_img {
+    if (aite_kekka == 0) {
         self.aite_img.image = gu_img;
-    } else if (kekka == 1) {
+    } else if (aite_kekka == 1) {
         self.aite_img.image = ch_img;
     } else {
         self.aite_img.image = pa_img;
@@ -42,14 +46,15 @@ UIImage *pa_img;
     self.aite_img.hidden = NO;
     self.btn_again.hidden = NO;
  
-    [self get_kekka];
+    [self decide_aite_kekka];
+    [self display_aite_img];
 
-    if (kekka == 0) {
+    if (aite_kekka == 0) {
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (kekka == 1) {
+    } else if (aite_kekka == 1) {
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_gu.enabled = NO;
     } else {
@@ -66,14 +71,15 @@ UIImage *pa_img;
     self.aite_img.hidden = NO;
     self.btn_again.hidden = NO;
     
-    [self get_kekka];
+    [self decide_aite_kekka];
+    [self display_aite_img];
     
-    if (kekka == 1) {
+    if (aite_kekka == 1) {
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_pa.hidden = NO;
         self.btn_gu.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (kekka == 2) {
+    } else if (aite_kekka == 2) {
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_tyoki.enabled = NO;
     } else {
@@ -90,14 +96,15 @@ UIImage *pa_img;
     self.aite_img.hidden = NO;
     self.btn_again.hidden = NO;
     
-    [self get_kekka];
+    [self decide_aite_kekka];
+    [self display_aite_img];
     
-    if (kekka == 2) {
+    if (aite_kekka == 2) {
         self.lbl_kekka.text = @"あいこで・・・";
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_again.hidden = YES;
-    } else if (kekka == 0) {
+    } else if (aite_kekka == 0) {
         self.lbl_kekka.text = @"あなたのかち";
         self.btn_pa.enabled = NO;
     } else {
