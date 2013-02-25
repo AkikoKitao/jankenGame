@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+
 @interface ViewController ()
 
 @end
@@ -17,10 +18,30 @@
 @synthesize btn_gu, btn_tyoki, btn_pa, btn_again;
 @synthesize lbl_mes,lbl_kekka,lbl_aite, aite_img;
 
+
 UIImage *gu_img;
 UIImage *ch_img;
 UIImage *pa_img;
 
+- (void)janken_sound {
+    NSURL *jankenM4AURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"janken" ofType:@"m4a"]];
+    SystemSoundID jankenSoundId;
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)jankenM4AURL, &jankenSoundId);
+    CFRelease((__bridge CFTypeRef)(jankenM4AURL));
+    AudioServicesPlaySystemSound(jankenSoundId);
+//    AudioServicesDisposeSystemSoundID(jankenSoundId);
+}
+
+- (void)aiko_sound {
+    NSURL *aikoM4AURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"aiko" ofType:@"m4a"]];
+    SystemSoundID aikoSoundId;
+    
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)aikoM4AURL, &aikoSoundId);
+    CFRelease((__bridge CFTypeRef)(aikoM4AURL));
+    AudioServicesPlaySystemSound(aikoSoundId);
+    //    AudioServicesDisposeSystemSoundID(jankenSoundId);
+}
 
 
 - (void)decide_aite_kekka {
@@ -41,6 +62,7 @@ UIImage *pa_img;
 - (void)display_aiko {
     self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     self.lbl_kekka.text = @"あいこで・・・";
+    [self aiko_sound];
 }
 
 - (void)display_kachi {
@@ -140,13 +162,18 @@ UIImage *pa_img;
     self.aite_img.hidden = YES;
     self.lbl_mes.text = @"じゃんけん・・・";
     self.lbl_kekka.text = @"";
+
+    [self janken_sound];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self janken_sound];
     self.btn_again.hidden = YES;
     self.lbl_aite.hidden = YES;
+    
     
     self.lbl_kekka.text = @"";
     self.lbl_kekka.font = [UIFont boldSystemFontOfSize:30];
@@ -155,6 +182,7 @@ UIImage *pa_img;
     gu_img = [UIImage imageNamed:@"gu.png"];
     ch_img = [UIImage imageNamed:@"ch.png"];
     pa_img = [UIImage imageNamed:@"pa.png"];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -162,6 +190,7 @@ UIImage *pa_img;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioServices.h>
 
 @interface ViewController : UIViewController{
     IBOutlet UIButton *btn_gu;
@@ -38,6 +39,8 @@
 - (void)display_aiko;
 - (void)display_kachi;
 - (void)display_make;
+- (void)janken_sound;
+- (void)aiko_sound;
 
 enum {
     gu,
