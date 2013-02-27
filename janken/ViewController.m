@@ -15,7 +15,7 @@
 
 @implementation ViewController
 
-@synthesize btn_gu, btn_tyoki, btn_pa, btn_again;
+@synthesize btn_gu, btn_tyoki, btn_pa, btn_janken;
 @synthesize lbl_mes,lbl_kekka,lbl_aite, aite_img;
 
 
@@ -43,6 +43,14 @@ UIImage *pa_img;
     //    AudioServicesDisposeSystemSoundID(jankenSoundId);
 }
 
+- (void)all_enable {
+    self.btn_gu.hidden = NO;
+    self.btn_gu.enabled = YES;
+    self.btn_tyoki.hidden = NO;
+    self.btn_tyoki.enabled = YES;
+    self.btn_pa.hidden = NO;
+    self.btn_pa.enabled = YES;
+}
 
 - (void)decide_aite_kekka {
     srand(time(nil));
@@ -81,7 +89,7 @@ UIImage *pa_img;
     self.btn_tyoki.hidden = YES;
     self.lbl_aite.hidden = NO;
     self.aite_img.hidden = NO;
-    self.btn_again.hidden = NO;
+    self.btn_janken.hidden = NO;
  
     [self decide_aite_kekka];
     [self display_aite_img];
@@ -90,7 +98,7 @@ UIImage *pa_img;
         [self display_aiko];
         self.btn_pa.hidden = NO;
         self.btn_tyoki.hidden = NO;
-        self.btn_again.hidden = YES;
+        self.btn_janken.hidden = YES;
     } else if (aite_kekka == choki) {
         [self display_kachi];
         self.btn_gu.enabled = NO;
@@ -106,7 +114,7 @@ UIImage *pa_img;
     self.btn_gu.hidden = YES;
     self.lbl_aite.hidden = NO;
     self.aite_img.hidden = NO;
-    self.btn_again.hidden = NO;
+    self.btn_janken.hidden = NO;
     
     [self decide_aite_kekka];
     [self display_aite_img];
@@ -115,7 +123,7 @@ UIImage *pa_img;
         [self display_aiko];
         self.btn_pa.hidden = NO;
         self.btn_gu.hidden = NO;
-        self.btn_again.hidden = YES;
+        self.btn_janken.hidden = YES;
     } else if (aite_kekka == pa) {
          [self display_kachi];
         self.btn_tyoki.enabled = NO;
@@ -131,7 +139,7 @@ UIImage *pa_img;
     self.btn_tyoki.hidden = YES;
     self.lbl_aite.hidden = NO;
     self.aite_img.hidden = NO;
-    self.btn_again.hidden = NO;
+    self.btn_janken.hidden = NO;
     
     [self decide_aite_kekka];
     [self display_aite_img];
@@ -140,7 +148,7 @@ UIImage *pa_img;
         [self display_aiko];
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
-        self.btn_again.hidden = YES;
+        self.btn_janken.hidden = YES;
     } else if (aite_kekka == gu) {
         [self display_kachi];
         self.btn_pa.enabled = NO;
@@ -150,16 +158,12 @@ UIImage *pa_img;
     }
 }
 
-- (IBAction)btn_again_down:(id)sender {
-    self.btn_gu.hidden = NO;
-    self.btn_gu.enabled = YES;
-    self.btn_tyoki.hidden = NO;
-    self.btn_tyoki.enabled = YES;
-    self.btn_pa.hidden = NO;
-    self.btn_pa.enabled = YES;
-    self.btn_again.hidden = YES;
+- (IBAction)btn_janken_down:(id)sender {
+    [self all_enable];
+    self.btn_janken.hidden = YES;
     self.lbl_aite.hidden = YES;
     self.aite_img.hidden = YES;
+    
     self.lbl_mes.text = @"じゃんけん・・・";
     self.lbl_kekka.text = @"";
 
@@ -170,11 +174,10 @@ UIImage *pa_img;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self janken_sound];
-    self.btn_again.hidden = YES;
+    [self all_enable];
+    self.btn_janken.hidden = NO;
     self.lbl_aite.hidden = YES;
-    
-    
+
     self.lbl_kekka.text = @"";
     self.lbl_kekka.font = [UIFont boldSystemFontOfSize:30];
     self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
