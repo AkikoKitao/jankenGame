@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 
 @interface ViewController ()
@@ -15,7 +16,7 @@
 
 @implementation ViewController
 
-@synthesize btn_gu, btn_tyoki, btn_pa, btn_janken;
+@synthesize btn_gu, btn_tyoki, btn_pa, btn_janken, btn_osaka_janken;
 @synthesize lbl_mes,lbl_kekka,lbl_aite, aite_img;
 
 
@@ -169,6 +170,11 @@ UIImage *pa_img;
 
     [self janken_sound];
     
+}
+
+- (IBAction)btn_osaka_janken_down:(id)sender{
+    SecondViewController *secondViewContoller = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    [self presentViewController:secondViewContoller animated:NO completion:nil];
 }
 
 - (void)viewDidLoad

@@ -7,10 +7,13 @@
 //
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
+#import "SecondViewController.h"
 
 @implementation AppDelegate
+
+//@synthesize viewController = _viewController;
+//@synthesize secondViewController = _secondViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -18,7 +21,9 @@
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
+    
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 
