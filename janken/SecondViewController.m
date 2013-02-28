@@ -67,43 +67,46 @@ UIImage *pa_img;
     }
 }
 
-- (void)display_aiko {
+- (void)aiko {
     self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     self.lbl_kekka.text = @"あいこで・・・";
     [self aiko_sound];
 }
 
-- (void)display_kachi {
+- (void)kachi {
     self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
     self.lbl_kekka.text = @"あなたのかち";
 }
 
-- (void)display_make {
+- (void)make {
     self.lbl_kekka.textColor = [[UIColor alloc] initWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
     self.lbl_kekka.text = @"あなたのまけ";
+}
+
+- (void)display_janken {
+    self.lbl_aite.hidden = NO;
+    self.aite_img.hidden = NO;
+    self.btn_janken.hidden = NO;
 }
 
 - (IBAction)btn_gu_down:(id)sender {
     self.lbl_mes.text = @"じゃんけん・・・ぽん";
     self.btn_pa.hidden = YES;
     self.btn_tyoki.hidden = YES;
-    self.lbl_aite.hidden = NO;
-    self.aite_img.hidden = NO;
-    self.btn_janken.hidden = NO;
-    
+    [self display_janken];
     [self decide_aite_kekka];
     [self display_aite_img];
     
     if (aite_kekka == gu) {
-        [self display_aiko];
+        [self aiko];
         self.btn_pa.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_janken.hidden = YES;
     } else if (aite_kekka == pa) {
-        [self display_kachi];
+        [self kachi];
         self.btn_gu.enabled = NO;
     } else {
-        [self display_make];
+        [self make];
         self.btn_gu.enabled = NO;
     }
 }
@@ -112,23 +115,20 @@ UIImage *pa_img;
     self.lbl_mes.text = @"じゃんけん・・・ぽん";
     self.btn_pa.hidden = YES;
     self.btn_gu.hidden = YES;
-    self.lbl_aite.hidden = NO;
-    self.aite_img.hidden = NO;
-    self.btn_janken.hidden = NO;
-    
+    [self display_janken];
     [self decide_aite_kekka];
     [self display_aite_img];
     
     if (aite_kekka == choki) {
-        [self display_aiko];
+        [self aiko];
         self.btn_pa.hidden = NO;
         self.btn_gu.hidden = NO;
         self.btn_janken.hidden = YES;
     } else if (aite_kekka == gu) {
-        [self display_kachi];
+        [self kachi];
         self.btn_tyoki.enabled = NO;
     } else {
-        [self display_make];
+        [self make];
         self.btn_tyoki.enabled = NO;
     }
 }
@@ -137,23 +137,20 @@ UIImage *pa_img;
     self.lbl_mes.text = @"じゃんけん・・・ぽん";
     self.btn_gu.hidden = YES;
     self.btn_tyoki.hidden = YES;
-    self.lbl_aite.hidden = NO;
-    self.aite_img.hidden = NO;
-    self.btn_janken.hidden = NO;
-    
+    [self display_janken];
     [self decide_aite_kekka];
     [self display_aite_img];
     
     if (aite_kekka == pa) {
-        [self display_aiko];
+        [self aiko];
         self.btn_gu.hidden = NO;
         self.btn_tyoki.hidden = NO;
         self.btn_janken.hidden = YES;
     } else if (aite_kekka == choki) {
-        [self display_kachi];
+        [self kachi];
         self.btn_pa.enabled = NO;
     } else {
-        [self display_make];
+        [self make];
         self.btn_pa.enabled = NO;
     }
 }
@@ -182,6 +179,9 @@ UIImage *pa_img;
     [self all_enable];
     self.btn_janken.hidden = NO;
     self.lbl_aite.hidden = YES;
+    self.btn_gu.enabled = NO;
+    self.btn_tyoki.enabled = NO;
+    self.btn_pa.enabled = NO;
     
     self.lbl_kekka.text = @"";
     self.lbl_kekka.font = [UIFont boldSystemFontOfSize:30];

@@ -41,9 +41,6 @@
 - (IBAction)btn_osaka_janken_down:(id)sender;
 - (void)decide_aite_kekka;
 - (void)display_aite_img;
-- (void)display_aiko;
-- (void)display_kachi;
-- (void)display_make;
 - (void)janken_sound;
 - (void)aiko_sound;
 
