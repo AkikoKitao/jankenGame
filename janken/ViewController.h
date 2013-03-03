@@ -19,8 +19,8 @@
     IBOutlet UIButton *btn_osaka_janken;
     IBOutlet UILabel  *lbl_mes;
     IBOutlet UILabel  *lbl_kekka;
-    IBOutlet UILabel  *lbl_aite;
     IBOutlet UIImageView *aite_img;
+    IBOutlet UIImageView *kekka_img;
     NSInteger aite_kekka;
 }
 
@@ -31,8 +31,8 @@
 @property(nonatomic,retain) UIButton *btn_osaka_janken;
 @property(nonatomic,retain) UILabel  *lbl_mes;
 @property(nonatomic,retain) UILabel  *lbl_kekka;
-@property(nonatomic,retain) UILabel  *lbl_aite;
 @property(nonatomic,retain) UIImageView *aite_img;
+@property(nonatomic,retain) UIImageView *kekka_img;
 
 - (IBAction)btn_gu_down:(id)sender;
 - (IBAction)btn_tyoki_down:(id)sender;
@@ -51,4 +51,3 @@ enum {
 };
 
 @end
-

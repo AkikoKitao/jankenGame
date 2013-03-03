@@ -19,8 +19,8 @@
     IBOutlet UIButton *btn_go_to_janken;
     IBOutlet UILabel  *lbl_mes;
     IBOutlet UILabel  *lbl_kekka;
-    IBOutlet UILabel  *lbl_aite;
     IBOutlet UIImageView *aite_img;
+    IBOutlet UIImageView *kekka_img;
     NSInteger aite_kekka;
 }
 
@@ -31,8 +31,8 @@
 @property(nonatomic,retain) UIButton *btn_go_to_janken;
 @property(nonatomic,retain) UILabel  *lbl_mes;
 @property(nonatomic,retain) UILabel  *lbl_kekka;
-@property(nonatomic,retain) UILabel  *lbl_aite;
 @property(nonatomic,retain) UIImageView *aite_img;
+@property(nonatomic,retain) UIImageView *kekka_img;
 
 - (IBAction)btn_gu_down:(id)sender;
 - (IBAction)btn_tyoki_down:(id)sender;
@@ -41,6 +41,7 @@
 - (IBAction)btn_go_to_janken_down:(id)sender;
 - (void)decide_aite_kekka;
 - (void)display_aite_img;
+- (void)janken_sound;
 - (void)aiko_sound;
 
 @end
